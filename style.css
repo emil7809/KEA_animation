@@ -1,175 +1,212 @@
-img {
-    width: 100%;
+body {
+    margin: 0;
+}
+
+#screen {
+    position: relative;
+    width: 100vw;
+    height: 56.25vw;
 }
 
 #menu_backround {
-    width: 90vw;
+    background-image: url(TitelscreenBG.jpg);
+    width: 100vw;
+    height: 100%;
+    background-size: 100%;
     position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
 #play {
+    background-image: url(Play.svg);
     width: 10vw;
+    height: 10vw;
     position: absolute;
-    left: 40vw;
+    left: 45vw;
     top: 25vw;
+    background-size: 100%;
 }
 
 #waves {
-    width: 90vw;
+    background-image: url(Waves.svg);
+    background-size: 100%;
+    width: 103vw;
+    height: 10vw;
     position: absolute;
-    left: 0vw;
-    top: 42vw;
+    left: -2vw;
+    top: 46vw;
 }
 
 #penguin {
+    background-image: url(penguin.svg);
+    background-size: 100%;
     width: 12vw;
+    height: 19vw;
     position: absolute;
     left: 18vw;
-    top: 29vw;
-}
-
-#settingsmenu {
-    width: 5vw;
-    position: absolute;
-    left: 84vw;
-    top: 1vw;
+    top: 33vw;
 }
 
 #game {
-    width: 90vw;
+    background-image: url(spilBG.jpg);
+    background-size: 100%;
+    width: 100vw;
+    height: 100%;
     position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
 #settingsmenu {
+    background-image: url(Settings.svg);
+    background-size: 100%;
     width: 5vw;
+    height: 5vw;
     position: absolute;
-    left: 84vw;
+    left: 92vw;
     top: 1vw;
 }
 
 #Star1 {
+    background-image: url(S1.svg);
+    background-size: 100%;
     width: 4.5vw;
+    height: 4.5vw;
     position: absolute;
-    left: 20.2vw;
-    top: 14.6vw;
+    left: 22.5vw;
+    top: 16.5vw;
 }
 
 #Star2 {
-    width: 4vw;
+    background-image: url(S2.svg);
+    background-size: 100%;
+    width: 4.5vw;
+    height: 4.5vw;
     position: absolute;
-    left: 31.8vw;
-    top: 12vw;
+    left: 35.2vw;
+    top: 13.2vw;
 }
 
 #Star3 {
-    width: 4.9vw;
+    background-image: url(S3.svg);
+    background-size: 100%;
+    width: 5.5vw;
+    height: 5.5vw;
     position: absolute;
-    left: 30.7vw;
-    top: 23.5vw;
+    left: 34vw;
+    top: 26vw;
 }
 
 #Star4 {
+    background-image: url(S4.svg);
+    background-size: 100%;
     width: 4vw;
+    height: 4vw;
     position: absolute;
-    left: 38.4vw;
-    top: 15.9vw;
+    left: 52.2vw;
+    top: 20.9vw;
 }
 
 #Star5 {
-    width: 3.5vw;
+    background-image: url(S5.svg);
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
     position: absolute;
-    left: 47vw;
-    top: 19vw;
+    left: 43vw;
+    top: 18vw;
 }
 
 #Star6 {
+    background-image: url(S6.svg);
+    background-size: 100%;
     width: 5vw;
+    height: 5vw;
     position: absolute;
-    left: 49vw;
-    top: 26vw;
+    left: 54.5vw;
+    top: 28.5vw;
 }
 
 #Star7 {
-    width: 4vw;
+    background-image: url(S7.svg);
+    background-size: 100%;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
-    left: 55vw;
-    top: 13vw;
+    left: 61.2vw;
+    top: 13.9vw;
 }
 
 #Star8 {
-    width: 4vw;
+    background-image: url(S8.svg);
+    background-size: 100%;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
-    left: 64vw;
-    top: 17vw;
+    left: 70.7vw;
+    top: 18.5vw;
 }
 
 #Star9 {
-    width: 3.5vw;
+    background-image: url(S9.svg);
+    background-size: 100%;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
-    left: 63vw;
-    top: 26vw;
+    left: 69vw;
+    top: 28vw;
 }
 
-#Star10 {
-    width: 2vw;
+#Star0 {
+    background-image: url(S10.svg);
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
     position: absolute;
-    left: 70.5vw;
-    top: 23vw;
-}
-
-#Star4 {
-    width: 3.5vw;
-    position: absolute;
-    left: 38.4vw;
-    top: 15.9vw;
+    left: 77.5vw;
+    top: 24.5vw;
 }
 
 #game_ui {
+    background-image: url(Bar.svg);
+    background-size: 100%;
     width: 30vw;
+    height: 6vw;
     position: absolute;
-    left: 30vw;
+    left: 35vw;
     top: 2vw;
 }
 
 
 #waves2 {
-    width: 90vw;
+    background-image: url(Waves.svg);
+    background-size: 100%;
+    width: 103vw;
+    height: 10vw;
     position: absolute;
-    left: 0vw;
-    top: 42vw;
+    left: -2vw;
+    top: 46vw;
 }
 
 #penguin2 {
-    width: 11vw;
+    background-image: url(penguin.svg);
+    background-size: 100%;
+    width: 12vw;
+    height: 19vw;
     position: absolute;
-    left: 40vw;
-    top: 31vw;
-}
-
-
-#start {
-    width: 50vw;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-}
-
-#play2 {
-    width: 10vw;
-    position: absolute;
-    left: 20vw;
-    top: 15vw;
+    left: 43vw;
+    top: 34vw;
 }
 
 #settings {
+    display: none;
+    background-image: url(Menu.svg);
+    background-size: 100%;
     width: 50vw;
+    height: 33vw;
     position: relative;
-    margin: auto;
     overflow: hidden;
+    left: 25vw;
+    top: 10vw;
 }
 
 #off {
@@ -201,9 +238,12 @@ img {
 }
 
 #gameover {
+    display: none;
+    background-image: url(Splash.svg);
+    background-size: 100%;
     width: 80vw;
+    height: 45vw;
     position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
@@ -215,9 +255,12 @@ img {
 }
 
 #levelcomplete {
+    display: none;
+    background-image: url(Win.svg);
+    background-size: 100%;
     width: 80vw;
+    height: 50vw;
     position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
