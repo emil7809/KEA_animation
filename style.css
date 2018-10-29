@@ -1,0 +1,229 @@
+img {
+    width: 100%;
+}
+
+#menu_backround {
+    width: 90vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#play {
+    width: 10vw;
+    position: absolute;
+    left: 40vw;
+    top: 25vw;
+}
+
+#waves {
+    width: 90vw;
+    position: absolute;
+    left: 0vw;
+    top: 42vw;
+}
+
+#penguin {
+    width: 12vw;
+    position: absolute;
+    left: 18vw;
+    top: 29vw;
+}
+
+#settingsmenu {
+    width: 5vw;
+    position: absolute;
+    left: 84vw;
+    top: 1vw;
+}
+
+#game {
+    width: 90vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#settingsmenu {
+    width: 5vw;
+    position: absolute;
+    left: 84vw;
+    top: 1vw;
+}
+
+#Star1 {
+    width: 4.5vw;
+    position: absolute;
+    left: 20.2vw;
+    top: 14.6vw;
+}
+
+#Star2 {
+    width: 4vw;
+    position: absolute;
+    left: 31.8vw;
+    top: 12vw;
+}
+
+#Star3 {
+    width: 4.9vw;
+    position: absolute;
+    left: 30.7vw;
+    top: 23.5vw;
+}
+
+#Star4 {
+    width: 4vw;
+    position: absolute;
+    left: 38.4vw;
+    top: 15.9vw;
+}
+
+#Star5 {
+    width: 3.5vw;
+    position: absolute;
+    left: 47vw;
+    top: 19vw;
+}
+
+#Star6 {
+    width: 5vw;
+    position: absolute;
+    left: 49vw;
+    top: 26vw;
+}
+
+#Star7 {
+    width: 4vw;
+    position: absolute;
+    left: 55vw;
+    top: 13vw;
+}
+
+#Star8 {
+    width: 4vw;
+    position: absolute;
+    left: 64vw;
+    top: 17vw;
+}
+
+#Star9 {
+    width: 3.5vw;
+    position: absolute;
+    left: 63vw;
+    top: 26vw;
+}
+
+#Star10 {
+    width: 2vw;
+    position: absolute;
+    left: 70.5vw;
+    top: 23vw;
+}
+
+#Star4 {
+    width: 3.5vw;
+    position: absolute;
+    left: 38.4vw;
+    top: 15.9vw;
+}
+
+#game_ui {
+    width: 30vw;
+    position: absolute;
+    left: 30vw;
+    top: 2vw;
+}
+
+
+#waves2 {
+    width: 90vw;
+    position: absolute;
+    left: 0vw;
+    top: 42vw;
+}
+
+#penguin2 {
+    width: 11vw;
+    position: absolute;
+    left: 40vw;
+    top: 31vw;
+}
+
+
+#start {
+    width: 50vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#play2 {
+    width: 10vw;
+    position: absolute;
+    left: 20vw;
+    top: 15vw;
+}
+
+#settings {
+    width: 50vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#off {
+    width: 10vw;
+    position: absolute;
+    left: 35vw;
+    top: 10vw;
+}
+
+#on {
+    width: 10vw;
+    position: absolute;
+    left: 35vw;
+    top: 18vw;
+}
+
+#volume {
+    width: 25vw;
+    position: absolute;
+    left: 20vw;
+    top: 25vw;
+}
+
+#out {
+    width: 5vw;
+    position: absolute;
+    left: 43vw;
+    top: 2vw;
+}
+
+#gameover {
+    width: 80vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#replay {
+    width: 10vw;
+    position: absolute;
+    left: 42vw;
+    top: 31vw;
+}
+
+#levelcomplete {
+    width: 80vw;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+#replay2 {
+    width: 10vw;
+    position: absolute;
+    left: 42vw;
+    top: 20vw;
+}
