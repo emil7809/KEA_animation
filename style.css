@@ -41,10 +41,32 @@ body {
     background-image: url(penguin.svg);
     background-size: 100%;
     width: 12vw;
-    height: 19vw;
+    height: 18vw;
     position: absolute;
     left: 18vw;
     top: 33vw;
+}
+
+.wavep {
+    animation-name: wavep_ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wavep_ani {
+    0% {
+        top: 33vw;
+    }
+
+    50% {
+        top: 34vw;
+    }
+
+    100% {
+        top: 33vw;
+    }
 }
 
 #game {
@@ -74,6 +96,28 @@ body {
     position: absolute;
     left: 22.5vw;
     top: 16.5vw;
+}
+
+.sparkel {
+    animation-name: sparkel_ani;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes sparkel_ani {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
 }
 
 #Star2 {
@@ -184,18 +228,61 @@ body {
     height: 10vw;
     position: absolute;
     left: -2vw;
-    top: 46vw;
+    top: 47vw;
 }
+
+.wave {
+    animation-name: wave_ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wave_ani {
+    0% {
+        top: 47vw;
+    }
+
+    50% {
+        top: 45vw;
+    }
+
+    100% {
+        top: 47vw;
+    }
+}
+
 
 #penguin2 {
     background-image: url(penguin.svg);
     background-size: 100%;
     width: 12vw;
-    height: 19vw;
+    height: 17.8vw;
     position: absolute;
-    left: 43vw;
+    left: 100vw;
     top: 34vw;
 }
+
+.drifter {
+    animation-name: drifter_ani;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes drifter_ani {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100;
+    }
+
+}
+
 
 #settings {
     display: none;
