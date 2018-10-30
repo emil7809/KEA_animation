@@ -274,11 +274,11 @@ body {
 
 @keyframes drifter_ani {
     from {
-        left: 0;
+        left: 0vw;
     }
 
     to {
-        left: 100;
+        left: 100vw;
     }
 
 }
