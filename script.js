@@ -14,15 +14,13 @@ function showStart() {
 function hideStart() {
     console.log("hide game");
     document.querySelector("#start").classList.add("fade_out");
-    document.querySelector("#start").classList.add("hide");
-    document.querySelector("#start").classList.remove("show");
+    document.querySelector("#game").classList.remove("hide");
     document.querySelector("#start").addEventListener("animationend", startGame);
 }
 
 function startGame() {
     console.log("start game");
-    document.querySelector("#game").classList.remove("hide");
-
+    document.querySelector("#start").classList.add("hide");
     document.querySelector("#Star1").addEventListener("click", clickStar);
     document.querySelector("#Star2").addEventListener("click", clickStar);
     document.querySelector("#Star3").addEventListener("click", clickNoStar);
@@ -41,10 +39,11 @@ let time = 70;
 
 function clickStar() {
     console.log("click star");
-    point = +1;
+    point += 1;
     time = +10;
     console.log(point);
     console.log(time);
+    this.removeEventListener("click", clickStar);
 }
 
 function clickNoStar() {
