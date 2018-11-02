@@ -18,7 +18,7 @@ body {
     user-select: none;
 }
 
-/* effekter */
+/* animation ***************************************************/
 .hide {
     visibility: hidden;
 }
@@ -27,13 +27,9 @@ body {
     visibility: visible;
 }
 
-.blur {
-    filter: blur(5px) brightness(80%);
-}
-
 .fade_out {
     animation-name: fadeout_ani;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -48,6 +44,146 @@ body {
     }
 }
 
+.wavep {
+    animation-name: wavep_ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wavep_ani {
+    0% {
+        top: 33vw;
+    }
+
+    50% {
+        top: 34vw;
+    }
+
+    100% {
+        top: 33vw;
+    }
+}
+
+.sparkel {
+    animation-name: sparkel_ani;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes sparkel_ani {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.win {
+    animation-name: win_ani;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes win_ani {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+
+.fail {
+    animation-name: fail_ani;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fail_ani {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(-5deg)
+    }
+
+    50% {
+        transform: rotate(5deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+
+.wave {
+    animation-name: wave_ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wave_ani {
+    0% {
+        top: 47vw;
+    }
+
+    50% {
+        top: 45vw;
+    }
+
+    100% {
+        top: 47vw;
+    }
+}
+
+.drifter {
+    animation-name: drifter_ani;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes drifter_ani {
+    from {
+        left: 0vw;
+    }
+
+    to {
+        left: 100vw;
+    }
+
+}
+
+
+
+/* animation ***************************************************/
+
+/*START******************************************************/
 #start {
     background-image: url(TitelscreenBG.jpg);
     width: 100vw;
@@ -87,27 +223,9 @@ body {
     top: 33vw;
 }
 
-.wavep {
-    animation-name: wavep_ani;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
+/*START******************************************************/
 
-@keyframes wavep_ani {
-    0% {
-        top: 33vw;
-    }
-
-    50% {
-        top: 34vw;
-    }
-
-    100% {
-        top: 33vw;
-    }
-}
+/*GAME******************************************************/
 
 #game {
     background-image: url(spilBG.jpg);
@@ -128,6 +246,8 @@ body {
     top: 1vw;
 }
 
+/*STARS***********************************/
+
 #Star1 {
     background-image: url(S1.svg);
     background-size: 100%;
@@ -138,27 +258,6 @@ body {
     top: 16.5vw;
 }
 
-.sparkel {
-    animation-name: sparkel_ani;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes sparkel_ani {
-    0% {
-        transform: scale(1)
-    }
-
-    50% {
-        transform: scale(1.2)
-    }
-
-    100% {
-        transform: scale(1)
-    }
-}
 
 #Star2 {
     background-image: url(S2.svg);
@@ -171,6 +270,7 @@ body {
 }
 
 #Star3 {
+    /*EVIL*/
     background-image: url(S3.svg);
     background-size: 100%;
     width: 5.5vw;
@@ -211,6 +311,7 @@ body {
 }
 
 #Star7 {
+    /*EVIL*/
     background-image: url(S7.svg);
     background-size: 100%;
     width: 5vw;
@@ -241,6 +342,7 @@ body {
 }
 
 #Star0 {
+    /*EVIL*/
     background-image: url(S10.svg);
     background-size: 100%;
     width: 4vw;
@@ -249,6 +351,8 @@ body {
     left: 77.5vw;
     top: 24.5vw;
 }
+
+/*STARS***********************************/
 
 #game_ui {
     background-image: url(Bar.svg);
@@ -271,29 +375,6 @@ body {
     top: 47vw;
 }
 
-.wave {
-    animation-name: wave_ani;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes wave_ani {
-    0% {
-        top: 47vw;
-    }
-
-    50% {
-        top: 45vw;
-    }
-
-    100% {
-        top: 47vw;
-    }
-}
-
-
 #penguin2 {
     background-image: url(penguin.svg);
     background-size: 100%;
@@ -304,25 +385,9 @@ body {
     top: 34vw;
 }
 
-.drifter {
-    animation-name: drifter_ani;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-}
+/*GAME******************************************************/
 
-@keyframes drifter_ani {
-    from {
-        left: 0vw;
-    }
-
-    to {
-        left: 100vw;
-    }
-
-}
-
+/*SETTINGS******************************************************/
 
 #settings {
     display: none;
@@ -363,6 +428,8 @@ body {
     left: 43vw;
     top: 2vw;
 }
+
+/*SETTINGS******************************************************/
 
 #gameover {
     display: none;
