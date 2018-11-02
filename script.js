@@ -15,11 +15,13 @@ function hideStart() {
     console.log("hide game");
     document.querySelector("#start").classList.add("fade_out");
     document.querySelector("#game").classList.remove("hide");
+    document.querySelector("#penguin2").classList.add("drifter");
     document.querySelector("#start").addEventListener("animationend", startGame);
 }
 
 function startGame() {
     console.log("start game");
+
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#Star1").addEventListener("click", clickStar);
     document.querySelector("#Star2").addEventListener("click", clickStar);

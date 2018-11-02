@@ -29,7 +29,7 @@ body {
 
 .fade_out {
     animation-name: fadeout_ani;
-    animation-duration: 0.5s;
+    animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -41,6 +41,23 @@ body {
 
     100% {
         opacity: 0;
+    }
+}
+
+.fade_in {
+    animation-name: fadein_ani;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein_ani {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -162,7 +179,7 @@ body {
 
 .drifter {
     animation-name: drifter_ani;
-    animation-duration: 60s;
+    animation-duration: 70s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
