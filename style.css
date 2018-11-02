@@ -91,7 +91,7 @@ body {
 .win {
     animation-name: win_ani;
     animation-duration: 2s;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }

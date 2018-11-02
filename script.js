@@ -43,6 +43,7 @@ function clickStar() {
     time = +10;
     console.log(point);
     console.log(time);
+    this.classList.add("win");
     this.removeEventListener("click", clickStar);
 }
 
@@ -50,4 +51,5 @@ function clickNoStar() {
     console.log("click no star");
     time = -23;
     console.log(time);
+    this.classList.add("fail");
 }
