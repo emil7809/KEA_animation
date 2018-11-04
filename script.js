@@ -42,7 +42,7 @@ let time = 70;
 function clickStar() {
     console.log("click star");
     point += 1;
-    time = +10;
+    time += 10;
     console.log(point);
     console.log(time);
     this.classList.add("win");
@@ -51,7 +51,11 @@ function clickStar() {
 
 function clickNoStar() {
     console.log("click no star");
-    time = -23;
+    time -= 24;
     console.log(time);
     this.classList.add("fail");
+}
+
+if (time == 0) {
+    alert("fail");
 }
