@@ -29,7 +29,7 @@ body {
 
 .fade_out {
     animation-name: fadeout_ani;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -46,7 +46,7 @@ body {
 
 .fade_in {
     animation-name: fadein_ani;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -241,6 +241,21 @@ body {
 }
 
 /*START******************************************************/
+
+/*TO WIN******************************************************/
+
+#towin {
+    background-image: url(To%20Win.svg);
+    background-size: 100%;
+    width: 50vw;
+    height: 29.4vw;
+    position: absolute;
+    overflow: hidden;
+    left: 25vw;
+    top: 10vw;
+}
+
+/*TO WIN******************************************************/
 
 /*GAME******************************************************/
 
@@ -448,6 +463,8 @@ body {
 
 /*SETTINGS******************************************************/
 
+/*GAMEOVER******************************************************/
+
 #gameover {
     display: none;
     background-image: url(Splash.svg);
@@ -466,6 +483,10 @@ body {
     top: 31vw;
 }
 
+/*GAMEOVER******************************************************/
+
+/*WIN******************************************************/
+
 #levelcomplete {
     display: none;
     background-image: url(Win.svg);
@@ -483,3 +504,5 @@ body {
     left: 42vw;
     top: 20vw;
 }
+
+/*WIN******************************************************/

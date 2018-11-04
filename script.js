@@ -2,6 +2,12 @@ window.addEventListener("load", sidenVises);
 
 function sidenVises() {
     console.log("siden vises");
+    hideToWin();
+}
+
+function hideToWin() {
+    console.log("hide to win");
+    document.querySelector("#towin").classList.add("hide");
     showStart();
 }
 
@@ -12,17 +18,25 @@ function showStart() {
 }
 
 function hideStart() {
-    console.log("hide game");
+    console.log("hide start");
     document.querySelector("#start").classList.add("fade_out");
     document.querySelector("#game").classList.remove("hide");
-    document.querySelector("#penguin2").classList.add("drifter");
-    document.querySelector("#start").addEventListener("animationend", startGame);
+    document.querySelector("#start").addEventListener("animationend", showToWin);
+}
+
+function showToWin() {
+    console.log("show to win");
+    document.querySelector("#towin").classList.add("fade_in");
+    document.querySelector("#start").classList.add("hide");
+    document.querySelector("#towin").classList.remove("hide");
+    document.querySelector("#towin").addEventListener("click", startGame);
 }
 
 function startGame() {
     console.log("start game");
-
+    document.querySelector("#towin").classList.add("hide");
     document.querySelector("#start").classList.add("hide");
+    document.querySelector("#penguin2").classList.add("drifter");
     document.querySelector("#Star1").addEventListener("click", clickStar);
     document.querySelector("#Star2").addEventListener("click", clickStar);
     document.querySelector("#Star3").addEventListener("click", clickNoStar);
@@ -54,8 +68,4 @@ function clickNoStar() {
     time -= 24;
     console.log(time);
     this.classList.add("fail");
-}
-
-if (time == 0) {
-    alert("fail");
 }
