@@ -105,6 +105,28 @@ body {
     }
 }
 
+.evil {
+    animation-name: evil_ani;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes evil_ani {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
 .win {
     animation-name: win_ani;
     animation-duration: 2s;
@@ -422,7 +444,6 @@ body {
 /*SETTINGS******************************************************/
 
 #settings {
-    display: none;
     background-image: url(Menu.svg);
     background-size: 100%;
     width: 50vw;
@@ -466,7 +487,6 @@ body {
 /*GAMEOVER******************************************************/
 
 #gameover {
-    display: none;
     background-image: url(Splash.svg);
     background-size: 100%;
     width: 80vw;
@@ -488,7 +508,6 @@ body {
 /*WIN******************************************************/
 
 #levelcomplete {
-    display: none;
     background-image: url(Win.svg);
     background-size: 100%;
     width: 80vw;
