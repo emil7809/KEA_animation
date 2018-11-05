@@ -262,6 +262,16 @@ body {
     top: 33vw;
 }
 
+#settings {
+    background-image: url(Settings.svg);
+    background-size: 100%;
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    left: 92vw;
+    top: 1vw;
+}
+
 /*START******************************************************/
 
 /*TO WIN******************************************************/
@@ -290,15 +300,6 @@ body {
     overflow: hidden;
 }
 
-#settingsmenu {
-    background-image: url(Settings.svg);
-    background-size: 100%;
-    width: 5vw;
-    height: 5vw;
-    position: absolute;
-    left: 92vw;
-    top: 1vw;
-}
 
 /*STARS***********************************/
 
@@ -443,7 +444,7 @@ body {
 
 /*SETTINGS******************************************************/
 
-#settings {
+#settings_screen {
     background-image: url(Menu.svg);
     background-size: 100%;
     width: 50vw;
@@ -454,14 +455,16 @@ body {
     top: 10vw;
 }
 
-#off {
+#sfx {}
+
+.off {
     width: 10vw;
     position: absolute;
     left: 35vw;
     top: 10vw;
 }
 
-#on {
+.on {
     width: 10vw;
     position: absolute;
     left: 35vw;
@@ -475,8 +478,11 @@ body {
     top: 25vw;
 }
 
-#out {
+#setting_close {
+    background-image: url(Ud%20af%20menu.svg);
+    background-size: 100%;
     width: 5vw;
+    height: 5vw;
     position: absolute;
     left: 43vw;
     top: 2vw;
@@ -518,6 +524,8 @@ body {
 }
 
 #replay2 {
+    background-image: url(Replay.svg);
+    background-size: 100%;
     width: 10vw;
     position: absolute;
     left: 42vw;
