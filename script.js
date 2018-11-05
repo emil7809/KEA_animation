@@ -1,5 +1,8 @@
 window.addEventListener("load", sidenVises);
 
+let showSettingsEffektSound = true;
+let showSettingsMusic = true;
+
 function sidenVises() {
     console.log("siden vises");
     showStart();
@@ -47,6 +50,8 @@ function startGame() {
 
 }
 
+//STAR STUFF********************************************************
+
 let point = 0;
 let energy = 30;
 
@@ -69,13 +74,20 @@ function clickStar() {
     }
     if (energy == 0) {
         document.querySelector("#gameover").classList.remove("hide");
+        document.querySelector("#replay").addEventListener("click", sidenVises);
     }
 }
+
+//STAR STUFF********************************************************
+
+//SETTINGS********************************************************
 
 function showSettings() {
     console.log("Show Settings");
     document.querySelector("#settings_screen").classList.remove("hide");
     document.querySelector("#setting_close").addEventListener("click", hideSettings);
+    document.querySelector("#sfx").addEventListener("click", toggleSounds);
+    document.querySelector("#music").addEventListener("click", toggleMusic);
 }
 
 
@@ -84,3 +96,52 @@ function hideSettings() {
     document.querySelector("#settings_screen").classList.toggle("hide");
 
 }
+
+
+function toggleSounds() {
+    console.log("toggle sounds");
+
+    if (showSettingsEffektSound == true) {
+        showSettingsEffektSound = false;
+        soundsOff();
+    } else {
+        showSettingsEffektSound = true;
+        soundsOn();
+    }
+}
+
+function soundsOff() {
+    console.log("sound off");
+    document.querySelector("#sfx").classList.add("sfxoff");
+}
+
+
+function soundsOn() {
+    console.log("sound on");
+    document.querySelector("#sfx").classList.add("sfxon");
+}
+
+function toggleMusic() {
+    console.log("toggle music");
+
+    if (showSettingsMusic == true) {
+        showSettingsMusic = false;
+        musicOff();
+    } else {
+        showSettingsMusic = true;
+        musicOn();
+    }
+}
+
+function musicOff() {
+    console.log("music off");
+    document.querySelector("#music").classList.add("musicoff");
+}
+
+
+function musicOn() {
+    console.log("music on");
+    document.querySelector("#music").classList.add("musicon");
+}
+
+//SETTINGS********************************************************
