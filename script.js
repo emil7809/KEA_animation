@@ -53,6 +53,12 @@ function startGame() {
 let point = 0;
 let time = 70;
 
+if (time > 70) {
+    console.log("click star");
+    time += 0;
+    console.log(time);
+}
+
 function clickStar() {
     console.log("click star");
     point += 1;
