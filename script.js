@@ -3,6 +3,10 @@ window.addEventListener("load", sidenVises);
 let showSettingsEffektSound = true;
 let showSettingsMusic = true;
 
+
+let point;
+let energy;
+
 function sidenVises() {
     console.log("siden vises");
     showStart();
@@ -25,10 +29,13 @@ function hideStart() {
 
 function showToWin() {
     console.log("show to win");
+    energy = 30;
+    point = 0;
     document.querySelector("#towin").classList.add("fade_in");
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#towin").classList.remove("hide");
     document.querySelector("#towin").addEventListener("click", startGame);
+
 }
 
 function startGame() {
@@ -47,25 +54,25 @@ function startGame() {
     document.querySelector("#Star9").addEventListener("click", clickStar);
     document.querySelector("#Star0").addEventListener("click", clickStar);
     document.querySelector("#settings").addEventListener("click", showSettings);
+    setTimeout(gameOver, 60000);
 
 }
 
 //STAR STUFF********************************************************
 
-let point = 0;
-let energy = 30;
 
 
 
 function clickStar() {
     console.log("click star");
     if (this.classList.contains("sparkel")) {
+        this.removeEventListener("click", clickStar);
         point += 1;
         console.log(point);
         this.classList.add("win");
         if (point == 7) {
-            document.querySelector("#levelcomplete").classList.remove("hide");
-            document.querySelector("#replay").addEventListener("click", replay);
+            levelComplete();
+
         }
     }
     if (this.classList.contains("evil")) {
@@ -74,14 +81,27 @@ function clickStar() {
         this.classList.add("fail");
     }
     if (energy == 0) {
-        document.querySelector("#gameover").classList.remove("hide");
-        document.querySelector("#replay").addEventListener("click", replay);
+        gameOver();
     }
+}
+
+function gameOver() {
+    console.log("Game over");
+    document.querySelector("#gameover").classList.remove("hide");
+    document.querySelector("#replay").addEventListener("click", replay);
+}
+
+function levelComplete() {
+    console.log("you win");
+    document.querySelector("#levelcomplete").classList.remove("hide");
+    document.querySelector("#replay2").addEventListener("click", replay);
 }
 
 function replay() {
     console.log("replay");
-    window.addEventListener("load", sidenVises);
+    document.querySelector("#gameover").classList.add("hide");
+    document.querySelector("#levelcomplete").classList.add("hide");
+    showToWin();
 }
 
 //STAR STUFF********************************************************
@@ -100,7 +120,6 @@ function showSettings() {
 
 function hideSettings() {
     console.log("hide settings");
-
     document.querySelector("#settings_screen").classList.toggle("hide");
 
 }
@@ -110,6 +129,7 @@ function toggleSounds() {
     console.log("toggle sounds");
 
     if (showSettingsEffektSound == false) {
+        console.log("toggle sound off");
         showSettingsEffektSound = true;
         document.querySelector("#sfx_sprite").classList.add("off_on");
         document.querySelector("#sfx_sprite").classList.remove("off");
@@ -117,6 +137,7 @@ function toggleSounds() {
         // soundsOff();
     } else {
         showSettingsEffektSound = false;
+        console.log("toggle sound on");
         document.querySelector("#sfx_sprite").classList.add("on_off");
         document.querySelector("#sfx_sprite").classList.remove("on");
         document.querySelector("#sfx_sprite").addEventListener('animationend', soundsOff);
@@ -132,8 +153,7 @@ function soundsOff() {
     document.querySelector("#sfx_sprite").classList.add("off");
 
     //    her slukkes for efx
-    document.querySelector("#sfx1").muted = true;
-    document.querySelector("#sfx2").muted = true;
+
 
 }
 
@@ -146,50 +166,52 @@ function soundsOn() {
     document.querySelector("#sfx_sprite").classList.add("on");
 
     //    her tændes for efx
-    document.querySelector("#sfx1").muted = false;
-    document.querySelector("#sfx2").muted = false;
+
 }
 
 function toggleMusic() {
     console.log("toggleMusic");
 
     if (showSettingsMusic == false) {
+        //Jeg slår lyden til
+        console.log("toggle music on");
         showSettingsMusic = true;
         document.querySelector("#music_sprite").classList.add("off_on");
         document.querySelector("#music_sprite").classList.remove("off");
-        document.querySelector("#music_sprite").addEventListener('animationend', soundsOn);
-        //musicOff();
+        document.querySelector("#music_sprite").addEventListener('animationend', musicOn);
+
     } else {
         showSettingsMusic = false;
+        console.log("toggle music off");
         document.querySelector("#music_sprite").classList.add("on_off");
         document.querySelector("#music_sprite").classList.remove("on");
-        document.querySelector("#music_sprite").addEventListener('animationend', soundsOff);
-        //musicOn();
+        document.querySelector("#music_sprite").addEventListener('animationend', musicOff);
+
     }
 }
 
 function musicOff() {
     console.log("musicOff function værdi er" + showSettingsMusic);
-    document.querySelector("#music_sprite").removeEventListener('animationend', soundsOff);
+    document.querySelector("#music_sprite").removeEventListener('animationend', musicOff);
     document.querySelector("#music_sprite").classList.remove("on_off");
     document.querySelector("#music_sprite").classList.add("off");
 
     //    her slukkes for musikken
 
-    document.querySelector("#MyMusic").pause();
+
 }
 
 
 function musicOn() {
     console.log("musicOn function værdi er" + showSettingsMusic);
 
-    document.querySelector("#music_sprite").removeEventListener('animationend', soundsOn);
+    document.querySelector("#music_sprite").removeEventListener('animationend', musicOn);
     document.querySelector("#music_sprite").classList.remove("off_on");
     document.querySelector("#music_sprite").classList.add("on");
 
     //    her tændes for musikken
 
-    document.querySelector("#MyMusik").play();
+
 }
 
 //SETTINGS********************************************************
