@@ -207,7 +207,7 @@ body {
 
 .drifter {
     animation-name: drifter_ani;
-    animation-duration: 70s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
@@ -459,6 +459,7 @@ body {
     overflow: hidden;
     left: 25vw;
     top: 10vw;
+    z-index: 90;
 }
 
 #volume {

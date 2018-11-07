@@ -3,7 +3,6 @@ window.addEventListener("load", sidenVises);
 let showSettingsEffektSound = true;
 let showSettingsMusic = true;
 
-
 let point;
 let energy;
 
@@ -15,6 +14,7 @@ function sidenVises() {
 
 function showStart() {
     console.log("show start");
+    document.querySelector("#myMusic").play();
     document.querySelector("#start").classList.remove("hide");
     document.querySelector("#play").addEventListener("click", hideStart);
     document.querySelector("#settings").addEventListener("click", showSettings);
@@ -22,6 +22,8 @@ function showStart() {
 
 function hideStart() {
     console.log("hide start");
+    document.querySelector("#push").currentTime = 0;
+    document.querySelector("#push").play();
     document.querySelector("#start").classList.add("fade_out");
     document.querySelector("#game").classList.remove("hide");
     document.querySelector("#start").addEventListener("animationend", showToWin);
@@ -40,6 +42,8 @@ function showToWin() {
 
 function startGame() {
     console.log("start game");
+    document.querySelector("#push").currentTime = 0;
+    document.querySelector("#push").play();
     document.querySelector("#towin").classList.add("hide");
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#penguin2").classList.add("drifter");
@@ -67,6 +71,8 @@ function clickStar() {
     console.log("click star");
     if (this.classList.contains("sparkel")) {
         this.removeEventListener("click", clickStar);
+        document.querySelector("#ping").play();
+        document.querySelector("#ping").currentTime = 0;
         point += 1;
         console.log(point);
         this.classList.add("win");
@@ -79,6 +85,8 @@ function clickStar() {
         energy -= 10;
         console.log(energy);
         this.classList.add("fail");
+        document.querySelector("#no").play();
+        document.querySelector("#no").currentTime = 0;
     }
     if (energy == 0) {
         gameOver();
@@ -89,18 +97,29 @@ function gameOver() {
     console.log("Game over");
     document.querySelector("#gameover").classList.remove("hide");
     document.querySelector("#replay").addEventListener("click", replay);
+    document.querySelector("#penguin2").classList.remove("drifter");
 }
 
 function levelComplete() {
     console.log("you win");
     document.querySelector("#levelcomplete").classList.remove("hide");
     document.querySelector("#replay2").addEventListener("click", replay);
+    document.querySelector("#penguin2").classList.remove("drifter");
 }
 
 function replay() {
     console.log("replay");
     document.querySelector("#gameover").classList.add("hide");
     document.querySelector("#levelcomplete").classList.add("hide");
+    document.querySelector("#push").play();
+    let arrStars = document.querySelectorAll(".star");
+    arrStars.forEach(function (star) {
+        console.log("loop");
+        star.classList.remove("fail");
+        star.classList.remove("win");
+    });
+    console.log(arrStars);
+    //this.classList.remove("fail");
     showToWin();
 }
 
@@ -110,7 +129,8 @@ function replay() {
 
 function showSettings() {
     console.log("Show Settings");
-
+    document.querySelector("#push").currentTime = 0;
+    document.querySelector("#push").play();
     document.querySelector("#settings_screen").classList.remove("hide");
     document.querySelector("#setting_close").addEventListener("click", hideSettings);
     document.querySelector("#sfx").addEventListener("click", toggleSounds);
@@ -120,6 +140,8 @@ function showSettings() {
 
 function hideSettings() {
     console.log("hide settings");
+    document.querySelector("#push").currentTime = 0;
+    document.querySelector("#push").play();
     document.querySelector("#settings_screen").classList.toggle("hide");
 
 }
@@ -127,7 +149,6 @@ function hideSettings() {
 
 function toggleSounds() {
     console.log("toggle sounds");
-
     if (showSettingsEffektSound == false) {
         console.log("toggle sound off");
         showSettingsEffektSound = true;
@@ -153,6 +174,9 @@ function soundsOff() {
     document.querySelector("#sfx_sprite").classList.add("off");
 
     //    her slukkes for efx
+    document.querySelector("#push").muted = true;
+    document.querySelector("#ping").muted = true;
+    document.querySelector("#no").muted = true;
 
 
 }
@@ -166,7 +190,9 @@ function soundsOn() {
     document.querySelector("#sfx_sprite").classList.add("on");
 
     //    her tændes for efx
-
+    document.querySelector("#push").muted = false;
+    document.querySelector("#ping").muted = false;
+    document.querySelector("#no").muted = false;
 }
 
 function toggleMusic() {
@@ -197,7 +223,7 @@ function musicOff() {
     document.querySelector("#music_sprite").classList.add("off");
 
     //    her slukkes for musikken
-
+    document.querySelector("#myMusic").pause();
 
 }
 
@@ -210,7 +236,7 @@ function musicOn() {
     document.querySelector("#music_sprite").classList.add("on");
 
     //    her tændes for musikken
-
+    document.querySelector("#myMusic").play();
 
 }
 
