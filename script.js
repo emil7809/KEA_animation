@@ -6,6 +6,8 @@ let showSettingsMusic = true;
 let point;
 let energy;
 
+let gameStatus;
+
 function sidenVises() {
     console.log("siden vises");
     showStart();
@@ -14,7 +16,6 @@ function sidenVises() {
 
 function showStart() {
     console.log("show start");
-    document.querySelector("#myMusic").play();
     document.querySelector("#start").classList.remove("hide");
     document.querySelector("#play").addEventListener("click", hideStart);
     document.querySelector("#settings").addEventListener("click", showSettings);
@@ -22,6 +23,7 @@ function showStart() {
 
 function hideStart() {
     console.log("hide start");
+    document.querySelector("#myMusic").play();
     document.querySelector("#push").currentTime = 0;
     document.querySelector("#push").play();
     document.querySelector("#start").classList.add("fade_out");
@@ -31,12 +33,30 @@ function hideStart() {
 
 function showToWin() {
     console.log("show to win");
+
+    //restart point/energy
     energy = 30;
     point = 0;
+
+    //restart energi sprite
+    document.querySelector("#energy_bar_sprite").classList.remove("ONELifeAni");
+    document.querySelector("#energy_bar_sprite").classList.remove("TWOLifeAni");
+    document.querySelector("#energy_bar_sprite").classList.remove("THREELifeAni");
+
+    //restart point
+    document.querySelector("#point_bar_sprite").classList.remove("ONEPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("TWOPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("THREEPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("FOURPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("FIVEPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("SIXPointsAni");
+    document.querySelector("#point_bar_sprite").classList.remove("SEVENPointsAni");
+
     document.querySelector("#towin").classList.add("fade_in");
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#towin").classList.remove("hide");
     document.querySelector("#towin").addEventListener("click", startGame);
+
 
 }
 
@@ -58,8 +78,8 @@ function startGame() {
     document.querySelector("#Star9").addEventListener("click", clickStar);
     document.querySelector("#Star0").addEventListener("click", clickStar);
     document.querySelector("#settings").addEventListener("click", showSettings);
-    setTimeout(gameOver, 60000);
 
+    setTimeout(gameOver, 10000);
 }
 
 //STAR STUFF********************************************************
@@ -76,11 +96,38 @@ function clickStar() {
         point += 1;
         console.log(point);
         this.classList.add("win");
-        if (point == 7) {
-            levelComplete();
-
-        }
     }
+
+    if (point == 1) {
+        document.querySelector("#point_bar_sprite").classList.add("ONEPointsAni");
+    }
+
+    if (point == 2) {
+        document.querySelector("#point_bar_sprite").classList.add("TWOPointsAni");
+    }
+
+    if (point == 3) {
+        document.querySelector("#point_bar_sprite").classList.add("THREEPointsAni");
+    }
+
+    if (point == 4) {
+        document.querySelector("#point_bar_sprite").classList.add("FOURPointsAni");
+    }
+
+    if (point == 5) {
+        document.querySelector("#point_bar_sprite").classList.add("FIVEPointsAni");
+    }
+
+    if (point == 6) {
+        document.querySelector("#point_bar_sprite").classList.add("SIXPointsAni");
+    }
+
+    if (point == 7) {
+        document.querySelector("#point_bar_sprite").classList.add("SEVENPointsAni");
+
+        endGame();
+    }
+
     if (this.classList.contains("evil")) {
         energy -= 10;
         console.log(energy);
@@ -88,16 +135,44 @@ function clickStar() {
         document.querySelector("#no").play();
         document.querySelector("#no").currentTime = 0;
     }
+
+    if (energy == 20) {
+        document.querySelector("#energy_bar_sprite").classList.add("ONELifeAni");
+
+    }
+
+    if (energy == 10) {
+        document.querySelector("#energy_bar_sprite").classList.add("TWOLifeAni");
+
+    }
+
+    if (energy == 0) {
+        document.querySelector("#energy_bar_sprite").classList.add("THREELifeAni");
+
+        endGame();
+    }
+}
+
+function endGame() {
+    console.log("end game");
+
+
     if (energy == 0) {
         gameOver();
+    }
+
+    if (point == 7) {
+        levelComplete();
     }
 }
 
 function gameOver() {
     console.log("Game over");
-    document.querySelector("#gameover").classList.remove("hide");
-    document.querySelector("#replay").addEventListener("click", replay);
-    document.querySelector("#penguin2").classList.remove("drifter");
+    if (gameStatus != "vundet") {
+        document.querySelector("#gameover").classList.remove("hide");
+        document.querySelector("#replay").addEventListener("click", replay);
+        document.querySelector("#penguin2").classList.remove("drifter");
+    }
 }
 
 function levelComplete() {
@@ -105,6 +180,7 @@ function levelComplete() {
     document.querySelector("#levelcomplete").classList.remove("hide");
     document.querySelector("#replay2").addEventListener("click", replay);
     document.querySelector("#penguin2").classList.remove("drifter");
+    gameStatus = "vundet";
 }
 
 function replay() {
@@ -136,7 +212,6 @@ function showSettings() {
     document.querySelector("#sfx").addEventListener("click", toggleSounds);
     document.querySelector("#music").addEventListener("click", toggleMusic);
 }
-
 
 function hideSettings() {
     console.log("hide settings");

@@ -2,10 +2,16 @@
 <html lang="de">
 
 <head>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="style.css">
+
+
+
     <title>Celestial Navigation</title>
 </head>
 
@@ -31,9 +37,11 @@
             </div>
 
             <div id="game_ui">
-                <div id="bar"></div>
+                <div id="bar_screen">
+                    <div id="energy_bar_sprite"></div>
+                    <div id="point_bar_sprite"></div>
+                </div>
             </div>
-
 
 
             <div id="forground">
@@ -85,7 +93,7 @@
 
     </div>
 
-    <audio id="myMusic" src="Spirit%20Of%20Bucephalus.mp3"></audio>
+    <audio id="myMusic" src="Spirit%20Of%20Bucephalus.mp3" loop></audio>
     <audio id="push" src="push.mp3"></audio>
     <audio id="ping" src="Star_Ping.mp3"></audio>
     <audio id="no" src="no_star.mp3"></audio>
