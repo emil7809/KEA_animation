@@ -79,7 +79,7 @@ function startGame() {
     document.querySelector("#Star0").addEventListener("click", clickStar);
     document.querySelector("#settings").addEventListener("click", showSettings);
 
-    setTimeout(gameOver, 10000);
+    setTimeout(gameOver, 30000);
 }
 
 //STAR STUFF********************************************************
@@ -125,7 +125,7 @@ function clickStar() {
     if (point == 7) {
         document.querySelector("#point_bar_sprite").classList.add("SEVENPointsAni");
 
-        endGame();
+        levelComplete();
     }
 
     if (this.classList.contains("evil")) {
@@ -149,26 +149,16 @@ function clickStar() {
     if (energy == 0) {
         document.querySelector("#energy_bar_sprite").classList.add("THREELifeAni");
 
-        endGame();
-    }
-}
-
-function endGame() {
-    console.log("end game");
-
-
-    if (energy == 0) {
         gameOver();
-    }
-
-    if (point == 7) {
-        levelComplete();
     }
 }
 
 function gameOver() {
     console.log("Game over");
-    if (gameStatus != "vundet") {
+    if (gameStatus !== "vundet") {
+        document.querySelector("#gameover").classList.add("smallToBig");
+        document.querySelector("#splash").currentTime = 0;
+        document.querySelector("#splash").play();
         document.querySelector("#gameover").classList.remove("hide");
         document.querySelector("#replay").addEventListener("click", replay);
         document.querySelector("#penguin2").classList.remove("drifter");
@@ -177,6 +167,9 @@ function gameOver() {
 
 function levelComplete() {
     console.log("you win");
+    document.querySelector("#levelcomplete").classList.add("smallToBig");
+    document.querySelector("#birds").currentTime = 0;
+    document.querySelector("#birds").play();
     document.querySelector("#levelcomplete").classList.remove("hide");
     document.querySelector("#replay2").addEventListener("click", replay);
     document.querySelector("#penguin2").classList.remove("drifter");
